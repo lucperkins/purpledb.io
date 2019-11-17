@@ -10,7 +10,9 @@
 
 Purple is meant to abstract away complex and multifarious data interfaces in favor of a unified set of [simple operations](#operations).
 
-> Purple was created by [Luc Perkins](https://github.com/lucperkins), Developer Advocate at the [Cloud Native Computing Foundation](https://cncf.io).
+### Creator
+
+Purple was created by [Luc Perkins](https://github.com/lucperkins), Developer Advocate at the [Cloud Native Computing Foundation](https://cncf.io) and author of the second edition of [Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement](https://7dbs.io).
 
 ## Table of contents
 
