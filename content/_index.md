@@ -133,6 +133,32 @@ Purple is designed for situations where you need a single storage backend shared
 
 Purple lets you do all of the above without needing to run multiple databases. If you *really* do need to run BigTable plus Redshift plus Redis plus MongoDB or somesuch, then Purple is probably not meant for you.
 
+### Example app
+
+You can see a TODO application that uses Purple [here](https://github.com/lucperkins/purple/blob/master/examples/app/main.go). The application is a simple REST API that uses Purple's sets interface to expose CRUD operations to users.
+
+To run the example app:
+
+```bash
+# First, install Docker Compose (https://docs.docker.com/compose/install/)
+# Then:
+git clone https://github.com/lucperkins/purple && cd purple
+docker-compose up --build
+```
+
+Here are some example operations on the app:
+
+```bash
+export TODOS=http://localhost:3000/todos
+
+curl -XPOST "$TODOS?todo=shopping"
+curl -XPOST "$TODOS?todo=running"
+curl $TODOS
+# {"todos":["shopping","running"]}
+curl -XDELETE "$TODOS?todo=running"
+# {"todos":["shopping"]}
+```
+
 ## Interfaces
 
 You can run Purple as a [gRPC server](#grpc-server) or as an [HTTP server](#http-server) (both expose the same [operations](#operations)).
