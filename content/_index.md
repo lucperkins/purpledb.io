@@ -219,13 +219,13 @@ There are two configuration files in the [`deploy`](https://github.com/lucperkin
 #### gRPC
 
 ```bash
-kubectl apply -f deploy/purple-grpc-k8s.yaml
+kubectl apply -f https://raw.githubusercontent.com/lucperkins/purple/master/deploy/purple-grpc-k8s.yaml
 ```
 
 #### HTTP
 
 ```bash
-kubectl apply -f deploy/purple-http-k8s.yaml
+kubectl apply -f https://raw.githubusercontent.com/lucperkins/purple/master/deploy/purple-http-k8s.yaml
 ```
 
 #### Accessing the service
@@ -234,8 +234,8 @@ Once you've deployed purple on Kubernetes, you can access it in your local envir
 
 ```bash
 # gRPC
-kubectl port-forward svc/purple 8080:8080
+kubectl port-forward svc/purple-grpc 8080:8080
 
 # HTTP
-kubectl port-forward svc/purple 8081:8081
+kubectl port-forward svc/purple-http 8081:8081
 ```
