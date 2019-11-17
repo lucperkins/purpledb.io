@@ -214,7 +214,7 @@ Purple can be deployed on pretty much any platform you can imagine. I've created
 
 ### Kubernetes
 
-There are two configuration files in the [`deploy`](https://github.com/lucperkins/purple/tree/master/deploy) directory that enable you to run the purple gRPC and HTTP servers, respectively, on Kubernetes. Both use the `default` namespace.
+There are two configuration files in the [`deploy`](https://github.com/lucperkins/purple/tree/master/deploy) directory that enable you to run the purple gRPC and HTTP servers, respectively, on Kubernetes. Both use the `default` namespace and both use Redis as a backend (and install a Redis service).
 
 #### gRPC
 
