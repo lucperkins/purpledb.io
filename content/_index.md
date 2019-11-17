@@ -159,6 +159,8 @@ curl -XDELETE "$TODOS?todo=running"
 # {"todos":["shopping"]}
 ```
 
+
+
 ## Interfaces
 
 You can run Purple as a [gRPC server](#grpc-server) or as an [HTTP server](#http-server) (both expose the same [operations](#operations)).
