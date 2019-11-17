@@ -1,0 +1,34 @@
+{{- $fonts    := site.Params.fonts }}
+{{- $fontSlice := (slice) }}
+{{- range $fonts }}
+{{- $fontSlice = $fontSlice | append (printf "%s:%s" (replace .name " " "+") (delimit .sizes ",")) }}
+{{- end }}
+{{- $fontsUrl := printf "https://fonts.googleapis.com/css?family=%s" (delimit $fontSlice "|") }}
+{{- $sansSerifFont := (index (where site.Params.fonts ".type" "sans_serif") 0).name }}
+{{- $monospaceFont := (index (where site.Params.fonts ".type" "monospace") 0).name }}
+{{- $fontAwesomeVersion := site.Params.fontawesomeversion }}
+{{- $fontAwesomeUrl     := printf "https://use.fontawesome.com/releases/v%s/css/all.css" $fontAwesomeVersion }}
+
+@charset "utf-8"
+@import url({{ $fontsUrl }})
+@import url({{ $fontAwesomeUrl }})
+
+$purple: #452475
+
+$primary: $purple
+$family-sans-serif: "{{ $sansSerifFont }}", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+$family-monospace: "{{ $monospaceFont }}", monospace
+
+@import "bulma/sass/utilities/initial-variables"
+
+$link: $primary
+
+@import "bulma/sass/utilities/functions"
+@import "bulma/sass/utilities/derived-variables"
+@import "bulma/bulma"
+
+ul li
+  list-style-type: square
+
+.content a
+  font-weight: 600

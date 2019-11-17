@@ -1,0 +1,27 @@
+title = "Purple"
+baseURL = "/"
+languageCode = "en-us"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+# Syntax highlighting settings
+pygmentsCodefences = true
+pygmentsStyle = "fruity"
+
+[blackfriday]
+hrefTargetBlank = true
+
+[params]
+fontawesomeversion = "5.11.2"
+description = """
+An all-in-one data service for microservices, FaaS functions, and more
+"""
+
+[[params.fonts]]
+name = "Nanum Gothic"
+sizes = [300, 400, 600, 700]
+type = "sans_serif"
+
+[[params.fonts]]
+name = "Roboto Mono"
+sizes = [300, 400, 600, 700]
+type = "monospace"

@@ -1,0 +1,36 @@
+{{ define "main" }}
+{{ $title := site.Title }}
+{{ $desc  := site.Params.description | markdownify }}
+<section class="hero is-primary is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <p class="title is-size-1 is-size-2-mobile has-text-weight-bold is-spaced">
+        {{ site.Title }}
+      </p>
+
+      <p class="subtitle is-size-3 is-size-4-mobile has-text-weight-medium">
+        {{ $desc }}
+      </p>
+
+      <div class="buttons">
+        <a class="button is-black is-radiusless is-shadowless" href="https://github.com/lucperkins/purple" target="_blank">
+          <span class="icon">
+            <i class="fab fa-github"></i>
+          </span>
+          <span class="has-text-weight-bold">
+            GitHub
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content is-medium">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}
