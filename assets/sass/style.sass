@@ -22,13 +22,16 @@ $family-monospace: "{{ $monospaceFont }}", monospace
 @import "bulma/sass/utilities/initial-variables"
 
 $link: $primary
+$code: $primary
+$code-background: $white-bis
 
 @import "bulma/sass/utilities/functions"
 @import "bulma/sass/utilities/derived-variables"
 @import "bulma/bulma"
 
-ul li
-  list-style-type: square
+.content
+  a
+    font-weight: 600
 
-.content a
-  font-weight: 600
+  ul li
+    list-style-type: square

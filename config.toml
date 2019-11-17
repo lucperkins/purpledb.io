@@ -1,11 +1,11 @@
 title = "Purple"
-baseURL = "/"
+baseURL = "https://purpledb.io"
 languageCode = "en-us"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # Syntax highlighting settings
 pygmentsCodefences = true
-pygmentsStyle = "fruity"
+pygmentsStyle = "paraiso-dark"
 
 [blackfriday]
 hrefTargetBlank = true
