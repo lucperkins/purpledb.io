@@ -16,12 +16,12 @@ Purple was created by [Luc Perkins](https://github.com/lucperkins), Developer Ad
 
 ## Table of contents
 
-* [Use cases](#use-cases)
 * [Installation](#installation)
   * [gRPC server](#grpc-server)
   * [HTTP server](#http-server)
   * [gRPC Go client](#grpc-go-client)
   * [HTTP Go client](#http-go-client)
+* [Use cases](#use-cases)
 * [Interfaces](#interfaces)
   * [Clients](#clients)
 * [Backends](#backends)
