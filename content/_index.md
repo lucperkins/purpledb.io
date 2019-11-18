@@ -55,13 +55,13 @@ Then you can run it:
 purple-grpc
 
 # Docker image
-docker run --rm -it -p 8080:8080 purpledb/purple-grpc:latest
+docker run --rm -it -p 8081:8081 purpledb/purple-grpc:latest
 ```
 
 You should see log output like this:
 
 ```log
-2019/07/27 14:37:09 Starting up the server on port 8080
+2019/07/27 14:37:09 Starting up the server on port 8081
 ```
 
 ### HTTP server
@@ -83,7 +83,7 @@ Then you can run it:
 purple-http
 
 # Docker image
-docker run --rm -it -p 8081:8081 purpledb/purple-http:latest
+docker run --rm -it -p 8080:8080 purpledb/purple-http:latest
 ```
 
 ### gRPC Go client
@@ -100,7 +100,7 @@ To instantiate a client:
 import "github.com/purpledb/purple"
 
 // Supply the address of the purple gRPC server
-client, err := purple.NewGrpcClient("localhost:8080")
+client, err := purple.NewGrpcClient("localhost:8081")
 if err != nil { 
     // Handle error
 }
@@ -116,7 +116,7 @@ if err := client.CacheSet("player1-session", "a1b2c3d4e5f6", 120); err != nil {
 ```go
 import "github.com/purpledb/purple"
 
-client, err := purple.NewHttpClient("http://localhost:8081")
+client, err := purple.NewHttpClient("http://localhost:8080")
 if err != nil {
     // Handle error
 }
@@ -264,8 +264,8 @@ Once you've deployed purple on Kubernetes, you can access it in your local envir
 
 ```bash
 # gRPC
-kubectl port-forward svc/purple-grpc 8080:8080
+kubectl port-forward svc/purple-grpc 8081:8081
 
 # HTTP
-kubectl port-forward svc/purple-http 8081:8081
+kubectl port-forward svc/purple-http 8080:8080
 ```
