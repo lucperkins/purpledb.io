@@ -1,17 +1,23 @@
-<footer class="footer has-background-light">
+<footer class="footer has-background-black">
   <div class="container">
-    <p class="title has-text-weight-bold has-text-primary is-spaced">
-      {{ site.Title }}
+    <p class="title has-text-weight-bold has-text-white-bis is-spaced">
+      <span class="icon has-text-primary">
+        <i class="fas fa-database"></i>
+      </span>
+      &nbsp;
+      <span>
+        {{ site.Title }}
+      </span>
     </p>
 
-    <p class="subtitle">
+    <p class="subtitle has-text-light">
       {{ site.Params.description }}
     </p>
 
     <hr class="has-background-grey" />
 
-    <small class="has-text-weight-bold">
-      Purple was created by <a href="https://github.com/lucperkins">Luc Perkins</a>, Developer Advocate for the <a href="https://cncf.io">Cloud Native Computing Foundation</a>, in {{ now.Year }}.
+    <small class="has-text-white-bis has-text-weight-bold">
+      Purple was created by <a href="https://github.com/lucperkins">Luc Perkins</a>, Developer Advocate for the <a href="https://cncf.io">Cloud Native Computing Foundation</a>, in 2019.
     </small>
   </div>
 </footer>
