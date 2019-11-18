@@ -22,6 +22,6 @@ sizes = [300, 400, 600, 700]
 type = "sans_serif"
 
 [[params.fonts]]
-name = "Roboto Mono"
+name = "Cousine"
 sizes = [300, 400, 600, 700]
 type = "monospace"
