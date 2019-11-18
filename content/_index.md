@@ -42,10 +42,10 @@ To install the Purple gRPC server:
 
 ```bash
 # Executable
-go get github.com/lucperkins/purple/cmd/purple-grpc
+go get github.com/purpledb/purple/cmd/purple-grpc
 
 # Docker image
-docker pull lucperkins/purple-grpc:latest
+docker pull purpledb/purple-grpc:latest
 ```
 
 Then you can run it:
@@ -55,7 +55,7 @@ Then you can run it:
 purple-grpc
 
 # Docker image
-docker run --rm -it -p 8080:8080 lucperkins/purple-grpc:latest
+docker run --rm -it -p 8080:8080 purpledb/purple-grpc:latest
 ```
 
 You should see log output like this:
@@ -70,10 +70,10 @@ To install the purple HTTP server:
 
 ```bash
 # Executable
-go get github.com/lucperkins/purple/cmd/purple-http
+go get github.com/purpledb/purple/cmd/purple-http
 
 # Docker image
-docker pull lucperkins/purple-http:latest
+docker pull purpledb/purple-http:latest
 ```
 
 Then you can run it:
@@ -83,7 +83,7 @@ Then you can run it:
 purple-http
 
 # Docker image
-docker run --rm -it -p 8081:8081 lucperkins/purple-http:latest
+docker run --rm -it -p 8081:8081 purpledb/purple-http:latest
 ```
 
 ### gRPC Go client
@@ -91,13 +91,13 @@ docker run --rm -it -p 8081:8081 lucperkins/purple-http:latest
 To use the Go client in your service or FaaS function:
 
 ```bash
-go get github.com/lucperkins/purple
+go get github.com/purpledb/purple
 ```
 
 To instantiate a client:
 
 ```go
-import "github.com/lucperkins/purple"
+import "github.com/purpledb/purple"
 
 // Supply the address of the purple gRPC server
 client, err := purple.NewGrpcClient("localhost:8080")
@@ -114,7 +114,7 @@ if err := client.CacheSet("player1-session", "a1b2c3d4e5f6", 120); err != nil {
 ### HTTP Go client
 
 ```go
-import "github.com/lucperkins/purple"
+import "github.com/purpledb/purple"
 
 client, err := purple.NewHttpClient("http://localhost:8081")
 if err != nil {
@@ -135,14 +135,14 @@ Purple lets you do all of the above without needing to run multiple databases. I
 
 ### Example app
 
-You can see a TODO application that uses Purple [here](https://github.com/lucperkins/purple/blob/master/examples/app/main.go). The application is a simple REST API that uses Purple's sets interface to expose CRUD operations to users.
+You can see a TODO application that uses Purple [here](https://github.com/purpledb/purple/blob/master/examples/app/main.go). The application is a simple REST API that uses Purple's sets interface to expose CRUD operations to users.
 
 To run the example app:
 
 ```bash
 # First, install Docker Compose (https://docs.docker.com/compose/install/)
 # Then:
-git clone https://github.com/lucperkins/purple && cd purple
+git clone https://github.com/purpledb/purple && cd purple
 docker-compose up --build
 ```
 
@@ -167,7 +167,7 @@ You can run Purple as a [gRPC server](#grpc-server) or as an [HTTP server](#http
 
 ### Clients
 
-There are currently [Go](https://golang.org) client libraries for both [gRPC](https://godoc.org/github.com/lucperkins/purple#GrpcClient) and [HTTP](https://godoc.org/github.com/lucperkins/purple#HttpClient), and I hope to support other languages soon.
+There are currently [Go](https://golang.org) client libraries for both [gRPC](https://godoc.org/github.com/purpledb/purple#GrpcClient) and [HTTP](https://godoc.org/github.com/purpledb/purple#HttpClient), and I hope to support other languages soon.
 
 ## Backends
 
@@ -225,7 +225,7 @@ Also be aware that Purple runs as a single instance and has no clustering built 
 
 Microservices or FaaS functions that rely on stateful data operations can use Purple instead of needing to interact with multiple databases. This greatly simplifies the service/function development process by sharply reducing the hassle of dealing with databases (i.e. no need to install/learn/use 5 different database clients).
 
-Does your service need something that isn't provided by Purple? [File an issue](https://github.com/lucperkins/purple/issues) or [submit a PR](https://github.com/lucperkins/purple/pulls) and I'll add it!
+Does your service need something that isn't provided by Purple? [File an issue](https://github.com/purpledb/purple/issues) or [submit a PR](https://github.com/purpledb/purple/pulls) and I'll add it!
 
 ### Future directions
 
@@ -244,18 +244,18 @@ Purple can be deployed on pretty much any platform you can imagine. I've created
 
 ### Kubernetes
 
-There are two configuration files in the [`deploy`](https://github.com/lucperkins/purple/tree/master/deploy) directory that enable you to run the purple gRPC and HTTP servers, respectively, on Kubernetes. Both use the `default` namespace and both use Redis as a backend (and install a Redis service).
+There are two configuration files in the [`deploy`](https://github.com/purpledb/purple/tree/master/deploy) directory that enable you to run the purple gRPC and HTTP servers, respectively, on Kubernetes. Both use the `default` namespace and both use Redis as a backend (and install a Redis service).
 
 #### gRPC
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/lucperkins/purple/master/deploy/purple-grpc-k8s.yaml
+kubectl apply -f https://raw.githubusercontent.com/purpledb/purple/master/deploy/purple-grpc-k8s.yaml
 ```
 
 #### HTTP
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/lucperkins/purple/master/deploy/purple-http-k8s.yaml
+kubectl apply -f https://raw.githubusercontent.com/purpledb/purple/master/deploy/purple-http-k8s.yaml
 ```
 
 #### Accessing the service
