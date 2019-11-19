@@ -8,7 +8,7 @@
 * Flags (basically key/value pairs where the value is a Boolean)
 * Caching (with TTL)
 
-Purple is meant to abstract away complex and multifarious data interfaces in favor of a unified set of [simple operations](#operations). Do your services and functions need access to centralized state but don't need a full-fledged database? Purple might just be the thing for you.
+Purple is meant to abstract away complex and multifarious data interfaces in favor of a unified set of [simple operations](#operations). Do your services and functions need access to centralized state but not to a full-fledged database like PostgreSQL or DynamoDB or FaunaDB? Purple might just be the thing for you.
 
 ### Creator
 
