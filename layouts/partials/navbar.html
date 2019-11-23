@@ -1,10 +1,24 @@
 {{ $home  := site.BaseURL }}
 {{ $title := site.Title }}
+{{ $desc  := site.Params.description }}
 <nav class="navbar is-primary is-fixed-top">
   <div class="container">
     <div class="navbar-brand">
       <div class="is-size-5 navbar-item has-text-weight-bold">
         {{ $title }}
+      </div>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item">
+          |
+        </div>
+
+
+        <div class="navbar-item">
+          {{ $desc }}
+        </div>
       </div>
     </div>
   </div>

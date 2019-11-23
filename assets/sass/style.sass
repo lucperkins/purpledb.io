@@ -20,6 +20,7 @@ $navbar-item-img-max-height: $navbar-height * 0.9
 $primary: $purple
 $family-sans-serif: "{{ $sansSerifFont }}", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 $family-monospace: "{{ $monospaceFont }}", monospace
+$success: #00c853
 
 @import "bulma/sass/utilities/initial-variables"
 
@@ -31,6 +32,9 @@ $code-background: $white-bis
 @import "bulma/sass/utilities/derived-variables"
 @import "bulma/bulma"
 
+.navbar
+  visibility: hidden
+
 .content
   padding-bottom: 5rem
 
@@ -39,6 +43,11 @@ $code-background: $white-bis
 
   ul li
     list-style-type: square
+
+  figure
+    figcaption
+      font-size: 1.5rem
+      font-style: normal
 
 .footer
   a

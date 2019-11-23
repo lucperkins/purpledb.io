@@ -10,9 +10,13 @@
 
 Purple is meant to abstract away complex and multifarious data interfaces in favor of a unified set of [simple operations](#operations). Do your services and functions need access to centralized state but not to a full-fledged database like PostgreSQL or DynamoDB or FaunaDB? Purple might just be the thing for you.
 
-### Creator
+## How it works
 
-Purple was created by [Luc Perkins](https://github.com/lucperkins), Developer Advocate at the [Cloud Native Computing Foundation](https://cncf.io) and author of the second edition of [Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement](https://7dbs.io).
+The diagram below shows how you can use Purple DB:
+
+{{< figure src="/img/purpledb-diagram.png" width="70%" >}}
+
+Here you see two services connecting to Purple and three serverless/FaaS functions. All of these processes can utilizing Purple as a single, centralized state storage system.
 
 ## Table of contents
 
@@ -269,3 +273,7 @@ kubectl port-forward svc/purple-grpc 8081:8081
 # HTTP
 kubectl port-forward svc/purple-http 8080:8080
 ```
+
+## Creator
+
+Purple was created by [Luc Perkins](https://github.com/lucperkins), Developer Advocate at the [Cloud Native Computing Foundation](https://cncf.io) and author of the second edition of [Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement](https://7dbs.io).
