@@ -3,7 +3,7 @@
 
 **Purple** is a simple yet powerful data backend with support for:
 
-* Key/value operations
+* **Key/value operations** — 
 * Counters and sets
 * Flags (basically key/value pairs where the value is a Boolean)
 * Caching (with TTL)
@@ -16,7 +16,7 @@ The diagram below shows how you can use Purple DB:
 
 {{< figure src="/img/purpledb-diagram.png" width="70%" >}}
 
-Here you see two services connecting to Purple and three serverless/FaaS functions. All of these processes can utilizing Purple as a single, centralized state storage system.
+Here you see two services and three serverless/FaaS functions connecting to a Purple backend. All of these processes can utilizing Purple as a single, centralized state storage system.
 
 ## Table of contents
 

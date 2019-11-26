@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="hero is-black">
+  <div class="hero-body">
+    <div class="container">
+      <p class="title is-size-1 is-size-2-mobile has-text-weight-light is-spaced">
+        Purple
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-variable is-8">
+      <div class="column is-three-quarters">
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <div class="toc">
+          {{ .TableOfContents }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

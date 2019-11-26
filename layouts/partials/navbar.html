@@ -4,18 +4,19 @@
 <nav class="navbar is-primary is-fixed-top">
   <div class="container">
     <div class="navbar-brand">
-      <div class="is-size-5 navbar-item has-text-weight-bold">
-        {{ $title }}
-      </div>
+      <a class="is-size-5 navbar-item has-text-weight-bold" href="{{ $home }}">
+        <span class="icon">
+          <i class="fas fa-md fa-database"></i>
+        </span>
+        &nbsp;&nbsp;
+        <span>
+          {{ $title }}
+        </span>
+      </a>
     </div>
 
     <div class="navbar-menu">
       <div class="navbar-start">
-        <div class="navbar-item">
-          |
-        </div>
-
-
         <div class="navbar-item">
           {{ $desc }}
         </div>

@@ -32,11 +32,16 @@ $code-background: $white-bis
 @import "bulma/sass/utilities/derived-variables"
 @import "bulma/bulma"
 
+.page
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  .main
+    flex: 1
+
 .navbar, .hero, .footer
   background-image: url(https://www.transparenttextures.com/patterns/cross-stripes.png)
-
-.navbar
-  visibility: hidden
 
 .content
   padding-bottom: 5rem
