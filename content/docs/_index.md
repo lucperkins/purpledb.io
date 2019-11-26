@@ -3,7 +3,7 @@
 
 **Purple** is a simple yet powerful data backend with support for:
 
-* **Key/value operations** — 
+* Key/value operations
 * Counters and sets
 * Flags (basically key/value pairs where the value is a Boolean)
 * Caching (with TTL)
@@ -14,27 +14,9 @@ Purple is meant to abstract away complex and multifarious data interfaces in fav
 
 The diagram below shows how you can use Purple DB:
 
-{{< figure src="/img/purpledb-diagram.png" width="70%" >}}
+{{< figure src="/img/purpledb-diagram.png" width="80%" >}}
 
 Here you see two services and three serverless/FaaS functions connecting to a Purple backend. All of these processes can utilizing Purple as a single, centralized state storage system.
-
-## Table of contents
-
-* [Installation](#installation)
-  * [gRPC server](#grpc-server)
-  * [HTTP server](#http-server)
-  * [gRPC Go client](#grpc-go-client)
-  * [HTTP Go client](#http-go-client)
-* [Use cases](#use-cases)
-* [Interfaces](#interfaces)
-  * [Clients](#clients)
-* [Backends](#backends)
-  * [Combinations](#combinations)
-* [Operations](#operations)
-* [The project](#the-project)
-  * [Goals](#goals)
-  * [Future directions](#future-directions)
-* [Deployment](#deployment)
 
 ## Installation
 

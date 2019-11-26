@@ -11,7 +11,7 @@
     </title>
     {{ partial "css.html" . }}
   </head>
-  <body{{ if not $isHome }} class="page has-navbar-fixed-top"{{ end }}>
+  <body{{ if not $isHome }} class="page"{{ end }}>
     {{ if not $isHome }}
     <main class="main">
       {{ partial "navbar.html" . }}
