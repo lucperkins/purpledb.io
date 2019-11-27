@@ -256,6 +256,15 @@ kubectl port-forward svc/purple-grpc 8081:8081
 kubectl port-forward svc/purple-http 8080:8080
 ```
 
+## Contributing
+
+There are many ways you can contribute to Purple!
+
+* See a problem? Have an idea? [Open an issue](https://github.com/purpledb/purple/issues).
+* Feel like hacking? [Open a pull request](https://github.com/purpledb/purple/pulls).
+
+What I'm most interested in at this phase is making Purple something that people would use in real production scenarios. If you think Purple is intriguing but there's something preventing you from using it in non-dev environments, let me know why [in the issues](https://github.com/purpledb/purple/issues)!
+
 ## Creator
 
 Purple was created by [Luc Perkins](https://github.com/lucperkins), Developer Advocate at the [Cloud Native Computing Foundation](https://cncf.io) and author of the second edition of [Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement](https://7dbs.io).
