@@ -3,9 +3,6 @@ baseURL = "https://purpledb.io"
 languageCode = "en-us"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
-[markup]
-hrefTargetBlank = true
-
 [markup.highlight]
 style = "paraiso-dark"
 

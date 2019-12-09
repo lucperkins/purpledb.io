@@ -322,6 +322,8 @@ If something goes wrong, you can check the logs:
 heroku logs
 ```
 
+You can also scale
+
 ## Contributing
 
 There are many ways you can contribute to Purple!
