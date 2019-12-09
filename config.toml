@@ -3,12 +3,11 @@ baseURL = "https://purpledb.io"
 languageCode = "en-us"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
-# Syntax highlighting settings
-pygmentsCodefences = true
-pygmentsStyle = "paraiso-dark"
-
-[blackfriday]
+[markup]
 hrefTargetBlank = true
+
+[markup.highlight]
+style = "paraiso-dark"
 
 [params]
 fontawesomeversion = "5.11.2"

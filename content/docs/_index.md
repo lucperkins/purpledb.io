@@ -145,8 +145,6 @@ curl -XDELETE "$TODOS?todo=running"
 # {"todos":["shopping"]}
 ```
 
-
-
 ## Interfaces
 
 You can run Purple as a [gRPC server](#grpc-server) or as an [HTTP server](#http-server) (both expose the same [operations](#operations)).
@@ -226,7 +224,7 @@ In the future, I imagine Purple acting as an abstraction layer over lots of diff
 
 ## Deployment
 
-Purple can be deployed on pretty much any platform you can imagine. I've created configs for [Kubernetes](#kubernetes) deployment but will provide other targets in the future.
+Purple can be deployed on pretty much any platform you can imagine. I've created configs for [Kubernetes](#kubernetes) and [Heroku](#heroku) deployment but will provide other targets in the future.
 
 ### Kubernetes
 
@@ -254,6 +252,74 @@ kubectl port-forward svc/purple-grpc 8081:8081
 
 # HTTP
 kubectl port-forward svc/purple-http 8080:8080
+```
+
+### Heroku
+
+You can run Purple on [Heroku](https://heroku.com) in just a few commands.
+
+{{< requirement >}}
+In order to run Purple on Heroku, you first need to [create an account](https://signup.heroku.com/), [install the `heroku` CLI tool](https://devcenter.heroku.com/articles/heroku-cli), and log in:
+
+```bash
+heroku login
+```
+{{< /requirement >}}
+
+Clone the Purple repo if you haven't already:
+
+```bash
+git clone https://github.com/purpledb/purple && cd purple
+```
+
+Now create a Heroku app:
+
+```bash
+heroku apps:create
+```
+
+This will create an app with a randomly generated name. To specify the name:
+
+```bash
+heroku apps:create --name my-specific-name
+```
+
+To deploy Purple, push to the Heroku Git repository:
+
+```bash
+git push heroku master
+```
+
+The default configuration runs Purple using the [memory](#backends) backend. The major shortcoming of the memory backend is that all data is wiped out when the service is restarted (Heroku restarts apps frequently). For persistent data, use the [Redis](#heroku-redis) backend instead.
+
+#### Redis {#heroku-redis}
+
+{{< warning >}}
+Running Purple on Heroku using Redis requires the `premium-0` plan or higher (which currently costs $15/month). That's because Purple requires 4 separate Redis databases to provide key isolation. To provision this plan:
+
+```bash
+heroku addons:create heroku-redis:premium-0
+```
+{{< /warning >}}
+
+Once you've provisioned the proper Heroku Redis plan, add a Heroku `Procfile` with these contents:
+
+```yaml
+web: bin/purple-http --backend redis --port $PORT --redis-url $REDIS_URL
+```
+
+Commit that file to Git and push the changes to Heroku:
+
+```bash
+git add Procile
+git commit -m "Add Procfile to Git"
+git push heroku master
+```
+
+If something goes wrong, you can check the logs:
+
+```bash
+heroku logs
 ```
 
 ## Contributing
