@@ -16,7 +16,7 @@ The diagram below shows how you can use Purple DB:
 
 {{< figure src="/img/purpledb-diagram.png" width="80%" >}}
 
-Here you see two services and three serverless/FaaS functions connecting to a Purple backend. All of these processes can utilizing Purple as a single, centralized state storage system.
+Here you see two services and three serverless/FaaS functions connecting to a Purple backend. All of these processes can utilize Purple as a single, centralized state storage system.
 
 ## Installation
 
