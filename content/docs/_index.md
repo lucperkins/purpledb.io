@@ -46,7 +46,7 @@ docker run --rm -it -p 8081:8081 purpledb/purple-grpc:latest
 
 You should see log output like this:
 
-```log
+```text
 2019/07/27 14:37:09 Starting up the server on port 8081
 ```
 
